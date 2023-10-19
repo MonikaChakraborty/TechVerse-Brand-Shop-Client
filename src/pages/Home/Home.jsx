@@ -12,7 +12,7 @@ const Home = () => {
 
       <div className="max-w-screen-xl mx-auto mb-24">
         <h2 className="text-4xl mb-8 text-center text-teal-700 font-medium">Brands</h2>
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {brands.map((brand) => (
             <BrandCards key={brand.brand_name} brands={brand}></BrandCards>
           ))}

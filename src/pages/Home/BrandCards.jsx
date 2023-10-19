@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const BrandCards = ({ brands }) => {
   const { brand_name, image } = brands;
   return (
-    <Link to={`/products/${brand_name}`}>
+    <Link to={`/brands/${brand_name}`}>
     <div className="card bg-teal-800 shadow-xl ">
       <figure>
-        <img className="w-full h-[50vh] object-cover"
+        <img className="w-full lg:h-[50vh] object-cover"
           src={image}
           alt=""
         />

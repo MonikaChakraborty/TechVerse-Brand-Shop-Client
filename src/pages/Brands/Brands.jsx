@@ -15,9 +15,10 @@ const Brands = () => {
     <div>
       <Navbar></Navbar>
 
-      <div className=" mb-24">
+      <div className="mb-24">
         {/* slider */}
-        <div className="carousel">
+
+        <div className="carousel mb-16">
           <div id="slide1" className="carousel-item relative w-full">
             <img src={image1} className="w-full h-screen" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -69,14 +70,14 @@ const Brands = () => {
 
 
         <div className="max-w-screen-xl mx-auto">
-        <h2 className="mt-16 text-4xl">Products</h2>
+        <h2 className="text-4xl text-center font-medium text-teal-800 mb-8">Products</h2>
         {/* <h3>products: {loadedProducts.length}</h3> */}
 
         
         {loadedProducts.length === 0 ? (
           <h1 className="text-4xl font-medium">No Products Available</h1>
         ) : (
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-16">
             {loadedProducts.map((product) => (
               <BrandProducts
                 key={product._id}
@@ -86,12 +87,6 @@ const Brands = () => {
           </div>
         )}
         </div>
-
-        {/* <div className="grid grid-cols-2 gap-12">
-          {loadedProducts.map((product) => (
-            <BrandProducts key={product._id} product={product}></BrandProducts>
-          ))}
-        </div> */}
       </div>
     </div>
   );
