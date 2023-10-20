@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
   const navLinks = (
     <>
       <li>
@@ -91,13 +93,52 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
+
+      {/* nav-end */}
       <div className="navbar-end">
-        <Link to='/login'>
-          <button className="btn">Login</button>
-        </Link>
+        {user?.email ? (
+          <div className="dropdown dropdown-end">
+            <label
+              tabIndex={0}
+              className="btn btn-ghost btn-circle avatar mr-2"
+            >
+              <div className="w-10 rounded-full">
+                {/* <img src={profilePic} /> */}
+                <img src={user.photoURL} alt={user.displayName} />
+              </div>
+            </label>
+
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content z-[1] shadow bg-base-200 rounded-box w-30 lg:w-56 mt-3"
+            >
+              <li>
+                <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+                  {user.displayName}
+                </button>
+              </li>
+
+              <li>
+                <button
+                  onClick={logOut}
+                  className="btn btn-ghost text-sm lg:text-base  bg-slate-200 normal-case"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="btn">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
 };
 
+
+
 export default Navbar;
+

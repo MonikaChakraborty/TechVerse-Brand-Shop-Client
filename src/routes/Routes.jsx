@@ -7,11 +7,15 @@ import Login from "../pages/Login/Login";
 import AddProducts from "../pages/AddProducts/AddProducts";
 import Brands from "../pages/Brands/Brands";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
+import Register from "../pages/Register/Register";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -20,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addProducts',
-                element: <AddProducts></AddProducts>
+                element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
                 
             },
             {
@@ -34,7 +38,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/products/:id',
-                element: <ProductDetail></ProductDetail>,
+                element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
 
 
@@ -42,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }

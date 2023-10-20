@@ -17,6 +17,8 @@ const AddProducts = () => {
         const newProduct = {image, name, brand_name, type, price, rating, short_description}
         console.log(newProduct);
 
+        // console.log(newProduct);
+
 
         // send data to server
         fetch('http://localhost:5000/products', {

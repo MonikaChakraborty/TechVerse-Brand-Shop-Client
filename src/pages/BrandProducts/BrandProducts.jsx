@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const BrandProducts = ({ product }) => {
   const { _id, image, name, brand_name, type, price, rating } = product;
   return (
-    <div className="card card-side bg-blue-100 shadow-xl">
+    <div className="card  lg:card-side bg-blue-100 shadow-xl">
       <figure className="bg-white">
-        <img className="w-full h-[50vh] object-cover" src={image} alt="" />
+        <img className="w-full lg:h-[50vh] object-cover" src={image} alt="" />
       </figure>
       <div className="m-8 text-teal-900">
         <h2 className="card-title mb-2">Name: {name}</h2>

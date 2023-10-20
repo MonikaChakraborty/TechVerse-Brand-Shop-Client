@@ -1,25 +1,58 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../shared/Navbar";
+import { useState } from "react";
+import Swal from 'sweetalert2'
+
 
 const ProductDetail = ({ product }) => {
-  const loadedProducts = useLoaderData();
+  const details = useLoaderData();
+
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => [...prevCart, details]);
+    // console.log(productId);
+    console.log(details);
+  
+
+
+    fetch('http://localhost:5000/cart', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(details)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        if(data.insertedId){
+          Swal.fire({
+            title: 'Success!',
+            text: 'Product Added To Cart Successfully!',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+        }
+    })
+  }
   // const { _id , image, name, brand_name, type, price, rating } = product;
   return (
     <div>
       <Navbar></Navbar>
 
-      <div className="max-w-screen-xl mx-auto mt-16">
-        <div className="card card-side shadow-xl bg-sky-100">
+      <div className="max-w-screen-xl mx-auto mt-24 ">
+        <div className="card lg:card-side shadow-xl bg-sky-100">
           <figure className=" ">
-            <img className="w-[1000px] mr-5 ml-5 h-[60vh] object-cover" src={loadedProducts.image} alt="" />
+            <img className="lg:w-[1000px] w-[500px] h-[40vh] lg:mr-5 lg:ml-5 lg:h-[65vh] object-cover" src={details.image} alt="" />
           </figure>
-          <div className="card-body">
-            <h2 className="card-title">Product Name: {loadedProducts.name}</h2>
-            <p className="text-lg">{loadedProducts.type}</p>
-            <p className="text-lg">Price: {loadedProducts.price}</p>
-            <p className="text-lg text-gray-600 font-medium">{loadedProducts.short_description}</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Add to Cart</button>
+          <div className="m-16">
+            <h2 className="card-title text-2xl mb-3">Product Name: {details.name}</h2>
+            <p className="text-lg mb-3">{details.type}</p>
+            <p className="text-lg mb-10">Price: {details.price}</p>
+            <p className="lg:text-lg text-gray-600 font-medium mb-16">{details.short_description}</p>
+            <div className="card-actions justify-center">
+              <button onClick={() => handleAddToCart(details._id)} className="btn btn-primary">Add to Cart</button>
             </div>
           </div>
         </div>
