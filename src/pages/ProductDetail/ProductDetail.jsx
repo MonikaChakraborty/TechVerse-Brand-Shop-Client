@@ -3,7 +3,7 @@ import Navbar from "../shared/Navbar";
 // import { useState } from "react";
 import Swal from 'sweetalert2'
 import useAuth from "../../hooks/useAuth";
-
+9
 
 const ProductDetail = ({ product }) => {
   const details = useLoaderData();
