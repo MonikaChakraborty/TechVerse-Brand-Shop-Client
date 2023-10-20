@@ -1,27 +1,32 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../shared/Navbar";
-import { useState } from "react";
+// import { useState } from "react";
 import Swal from 'sweetalert2'
+import useAuth from "../../hooks/useAuth";
 
 
 const ProductDetail = ({ product }) => {
   const details = useLoaderData();
+  const {user} = useAuth();
 
-  const [cart, setCart] = useState([]);
 
   const handleAddToCart = (product) => {
-    setCart((prevCart) => [...prevCart, details]);
     // console.log(productId);
-    console.log(details);
-  
+    console.log(details, user.email);
 
+
+    const cartItem = {
+      userEmail: user.email,
+      productDetails: details,
+    };
+  
 
     fetch('http://localhost:5000/cart', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(details)
+        body: JSON.stringify(cartItem)
     })
     .then(res => res.json())
     .then(data => {
@@ -44,7 +49,7 @@ const ProductDetail = ({ product }) => {
       <div className="max-w-screen-xl mx-auto mt-24 ">
         <div className="card lg:card-side shadow-xl bg-sky-100">
           <figure className=" ">
-            <img className="lg:w-[1000px] w-[500px] h-[40vh] lg:mr-5 lg:ml-5 lg:h-[65vh] object-cover" src={details.image} alt="" />
+            <img className="lg:w-[1000px] w-[500px] lg:mr-5 lg:ml-5 lg:h-[65vh] object-cover" src={details.image} alt="" />
           </figure>
           <div className="m-16">
             <h2 className="card-title text-2xl mb-3">Product Name: {details.name}</h2>
@@ -60,5 +65,6 @@ const ProductDetail = ({ product }) => {
     </div>
   );
 };
+
 
 export default ProductDetail;

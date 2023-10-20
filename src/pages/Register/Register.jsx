@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar";
 import LoginMedia from "../Login/LoginMedia";
 import toast from "react-hot-toast";
@@ -6,9 +6,10 @@ import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
   
-  const {createUser} = useAuth();
+  const {createUser, handleUpdateProfile} = useAuth();
+  const navigate = useNavigate();
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
         // getting the field values from the form
@@ -17,25 +18,42 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        // try{
-        //     if (password.length < 6){
-        //         throw new Error("Password is less than 6 characters");
-        //     }
-        // } catch(error){
-        //     toast.error(error.message)
-        // }
 
-        if(password.length < 6){
-          toast.error('Password is less than 6 characters')
-          return;
+
+        try {
+          // Validation
+          if (password.length < 6) {
+            throw new Error("The password is less than 6 characters");
+          } else if (!/[A-Z]/.test(password)) {
+            throw new Error("The password does not have a capital letter");
+          } else if (!/[!@#$%^&*]/.test(password)) {
+            throw new Error("The password does not have a special character");
+          }
+
+
+    
+          // Create a new user
+          const userCredential = await createUser(email, password);
+    
+
+
+          // Update user profile
+          await handleUpdateProfile(name, photo);
+          toast.success("Registration Successful");
+
+          // e.target.reset();
+
+          // navigate user after register
+          navigate("/");
+
+        } catch (error) {
+          // Display error toast
+          toast.error(error.message);
+          e.target.reset();
         }
 
-        // create new user
-        createUser(email, password)
-        .then(res => console.log(res.user))
-        .catch(error => console.log(error))
-
     }
+
   return (
     <div>
       <Navbar></Navbar>
