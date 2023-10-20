@@ -1,12 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../shared/Navbar";
+import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const product = useLoaderData();
   const { _id, image, name, brand_name, type, price, rating } = product;
 
 
-  const handleAddProduct = event => {
+  const handleUpdateProduct = event => {
     event.preventDefault();
 
     const form = event.target;
@@ -16,26 +17,33 @@ const UpdateProduct = () => {
     const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const short_description = form.short_description.value;
+    // const short_description = form.short_description.value;
 
-    const newProduct = {image, name, brand_name, type, price, rating, short_description}
-    console.log(newProduct);
+    const updatedProduct = {image, name, brand_name, type, price, rating}
+    console.log(updatedProduct);
 
     // console.log(newProduct);
 
 
     // send data to server
-    fetch('http://localhost:5000/products', {
-        method: 'POST',
+    fetch(`http://localhost:5000/update/${_id}`, {
+        method: 'PUT',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(newProduct)
+        body: JSON.stringify(updatedProduct)
     })
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        if(data.inserted)
+        if(data.modifiedCount > 0){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Product Updated Successfully!',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
+        }
         form.reset();
     })
 
@@ -46,11 +54,11 @@ const UpdateProduct = () => {
 
       <div className="bg-teal-100 p-16">
         <h2 className="text-4xl font-bold text-center mb-8 text-teal-800">
-          Add product
+          Update Product : {name}
         </h2>
-        <form onSubmit={handleAddProduct}>
+        <form onSubmit={handleUpdateProduct}>
           {/* form row 1*/}
-          <div className="md:flex mb-5">
+          <div className="md:flex mb-8">
             <div className="form-control md: w-1/2">
               <label className="label">
                 <span className="label-text text-lg">Image</span>
@@ -59,7 +67,7 @@ const UpdateProduct = () => {
                 {/* <span>Name</span> */}
                 <input
                   type="text"
-                  name="image"
+                  name="image" defaultValue={image}
                   placeholder="Image"
                   className="input input-bordered w-full"
                 />
@@ -73,7 +81,7 @@ const UpdateProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
-                  name="name"
+                  name="name" defaultValue={name}
                   placeholder="Name"
                   className="input input-bordered w-full"
                 />
@@ -82,7 +90,7 @@ const UpdateProduct = () => {
           </div>
 
           {/* form row 2*/}
-          <div className="md:flex mb-5">
+          <div className="md:flex mb-8">
             <div className="form-control md: w-1/2">
               <label className="label">
                 <span className="label-text text-lg">Brand Name</span>
@@ -90,7 +98,7 @@ const UpdateProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
-                  name="brand_name"
+                  name="brand_name" defaultValue={brand_name}
                   placeholder="Brand Name"
                   className="input input-bordered w-full"
                 />
@@ -104,7 +112,7 @@ const UpdateProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
-                  name="type"
+                  name="type" defaultValue={type}
                   placeholder="Type"
                   className="input input-bordered w-full"
                 />
@@ -113,7 +121,7 @@ const UpdateProduct = () => {
           </div>
 
           {/* form row 3 */}
-          <div className="md:flex mb-5">
+          <div className="md:flex mb-16">
             <div className="form-control md: w-1/2">
               <label className="label">
                 <span className="label-text text-lg">Price</span>
@@ -121,7 +129,7 @@ const UpdateProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
-                  name="price"
+                  name="price" defaultValue={price}
                   placeholder="Price"
                   className="input input-bordered w-full"
                 />
@@ -135,7 +143,7 @@ const UpdateProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
-                  name="rating"
+                  name="rating" defaultValue={rating}
                   placeholder="Rating"
                   className="input input-bordered w-full"
                 />
@@ -144,7 +152,7 @@ const UpdateProduct = () => {
           </div>
 
           {/* form row 4 */}
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <div className="form-control w-full">
               <label className="label">
                 <span className="label-text text-lg">Short Description</span>
@@ -158,11 +166,11 @@ const UpdateProduct = () => {
                 />
               </label>
             </div>
-          </div>
+          </div> */}
 
           <input
-            type="submit"
-            value="Add Product"
+            type="submit" 
+            value="Update"
             className="btn btn-block bg-teal-600 text-white hover:bg-teal-800 normal-case text-lg"
           />
         </form>
