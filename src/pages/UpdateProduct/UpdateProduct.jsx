@@ -52,7 +52,7 @@ const UpdateProduct = () => {
     <div>
       {/* <Navbar></Navbar> */}
 
-      <div className="bg-teal-100 p-16">
+      <div className="bg-gradient-to-r from-teal-600 to-sky-200 p-16">
         <h2 className="text-4xl font-bold text-center mb-8 text-teal-800">
           Update Product : {name}
         </h2>

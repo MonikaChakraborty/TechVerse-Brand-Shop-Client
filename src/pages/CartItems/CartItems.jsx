@@ -20,7 +20,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
         //     'Your file has been deleted.',
         //     'success'
         //   )
-        
+
         fetch(`https://tech-brand-server.vercel.app/cart/${_id}`, {
             method: 'DELETE'
         })
@@ -39,16 +39,16 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <div className="bg-sky-100 pb-4 rounded-lg shadow-md">
+    <div className="max-w-screen-xl mx-auto bg-gradient-to-r from-teal-600 to-sky-200 mb-16">
+      <div className="pb-4 bg-sky-200 rounded-lg shadow-md ">
         <figure>
           <img
-            className="w-[500px]  bg-cover object-cover rounded-b-md mb-4"
+            className="w-[500px]  object-cover rounded-t-lg mb-4"
             src={productDetails.image}
             alt={productDetails.name}
           />
         </figure>
-        <div className="text-center">
+        <div className="text-center ">
           <h2 className="text-lg font-semibold mb-2">{productDetails.name}</h2>
           <p className="text-gray-500 mb-2">{productDetails.brand_name}</p>
           <p className="text-gray-500 mb-2">{productDetails.type}</p>

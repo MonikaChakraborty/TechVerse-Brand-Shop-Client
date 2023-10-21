@@ -36,11 +36,11 @@ const MyCart = () => {
   }, [user, navigate]);
 
   return (
-    <div>
+    <div className="bg-gradient-to-r from-teal-600 to-sky-200 ">
       {/* Render the cart items in the component */}
       {/* <Navbar></Navbar> */}
-      <h1 className="text-4xl font-medium text-teal-800 text-center mt-6 mb-10">My Cart Items</h1>
-      <div className="grid grid-cols-1 gap-10 mb-16">
+      <h1 className="text-4xl font-medium text-teal-900 text-center pt-4 mb-10">My Cart Items</h1>
+      <div className="grid grid-cols-1">
       {cartItems.map((item) => (
         // Render each item in the cart
         <CartItems key={item._id} item={item} cartItems={cartItems} setCartItems={setCartItems}></CartItems>
