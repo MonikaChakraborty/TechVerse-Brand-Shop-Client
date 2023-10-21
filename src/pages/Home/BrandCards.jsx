@@ -4,7 +4,7 @@ const BrandCards = ({ brands }) => {
   const { brand_name, image } = brands;
   return (
     <Link to={`/brands/${brand_name}`}>
-    <div className="card bg-sky-200 shadow-xl ">
+    <div className="card bg-gradient-to-r from-sky-200 to-teal-600 shadow-xl ">
       <figure>
         <img className="w-full lg:h-[50vh] object-cover"
           src={image}

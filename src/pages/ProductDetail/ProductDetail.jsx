@@ -47,7 +47,7 @@ const ProductDetail = ({ product }) => {
       <Navbar></Navbar>
 
       <div className="max-w-screen-xl mx-auto mt-24 ">
-        <div className="card lg:card-side shadow-xl bg-sky-100">
+        <div className="card lg:card-side shadow-xl bg-gradient-to-r from-sky-100 to-blue-300">
           <figure className=" ">
             <img className="lg:w-[1000px] w-[500px] lg:mr-5 lg:ml-5 lg:h-[65vh] object-cover" src={details.image} alt="" />
           </figure>
@@ -57,7 +57,7 @@ const ProductDetail = ({ product }) => {
             <p className="text-lg text-gray-700 font-bold mb-10">Price: {details.price}</p>
             <p className="lg:text-lg text-gray-600 font-medium mb-16">{details.short_description}</p>
             <div className="card-actions justify-center">
-              <button onClick={() => handleAddToCart(details._id)} className="btn btn-primary">Add to Cart</button>
+              <button onClick={() => handleAddToCart(details._id)} className="btn bg-sky-600 hover:bg-sky-800 text-white border-none normal-case text-base">Add to Cart</button>
             </div>
           </div>
         </div>

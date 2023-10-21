@@ -9,9 +9,9 @@ import { FaLocationDot } from "react-icons/fa6";
 const GetInTouch = () => {
   return (
     <div className="max-w-screen-xl mx-auto mb-24">
-      <div className="bg-sky-200 flex lg:flex-row flex-col justify-center gap-16 p-8 rounded-xl shadow-lg">
+      <div className="bg-gradient-to-r from-teal-600 to-sky-200 flex lg:flex-row flex-col justify-center gap-16 p-8 rounded-xl shadow-lg">
         <div className="flex flex-col w-1/2">
-          <h1 className="text-4xl text-center mb-8 font-bold text-teal-800">
+          <h1 className="text-4xl text-center mb-8 font-bold text-teal-100">
             Get In Touch
           </h1>
           <div className="flex flex-col gap-4">
@@ -40,7 +40,7 @@ const GetInTouch = () => {
               cols="30"
               rows="5"
             ></textarea>
-            <button className="btn w-48 bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-md flex items-center gap-2">
+            <button className="btn w-48 bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-md flex items-center gap-2 border-none">
               <FiSend />
               Send Message
             </button>

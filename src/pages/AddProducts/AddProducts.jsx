@@ -39,7 +39,7 @@ const AddProducts = () => {
     <div>
       <Navbar></Navbar>
 
-      <div className="bg-teal-100 p-16">
+      <div className="bg-gradient-to-r from-teal-600 to-sky-200 p-16">
         <h2 className="text-4xl font-bold text-center mb-8 text-teal-800">Add product</h2>
         <form onSubmit={handleAddProduct}>
 
@@ -164,7 +164,7 @@ const AddProducts = () => {
 
           </div>
 
-          <input type="submit" value="Add Product" className="btn btn-block bg-teal-600 text-white hover:bg-teal-800 normal-case text-lg" />
+          <input type="submit" value="Add Product" className="btn border-none bg-sky-200 text-gray-600 hover:bg-teal-800 hover:text-white normal-case text-base " />
         </form>
       </div>
     </div>

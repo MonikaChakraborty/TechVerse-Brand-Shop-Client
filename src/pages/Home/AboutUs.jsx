@@ -65,7 +65,7 @@ const AboutUs = () => {
             elevate your tech experience.
           </p>
 
-          <div className="mt-8 grid grid-cols-2 gap-12">
+          <div className="mt-8 grid grid-cols-2 gap-8">
             <h3 className="flex items-center text-gray-600 font-semibold text-lg">
               <BsFillLightbulbFill size={30} className="mr-2 text-yellow-300"></BsFillLightbulbFill>
               Innovative Technology
@@ -81,6 +81,7 @@ const AboutUs = () => {
               <FcGlobe size={30} className="mr-2"></FcGlobe>Global Reach
             </h3>
           </div>
+          <button className="btn mt-12 text-white bg-teal-600 normal-case text-base hover:bg-teal-800">Meet with Us</button>
         </div>
         <div className="w-[40%] mt-12 -ml-12 relative">
           <img
