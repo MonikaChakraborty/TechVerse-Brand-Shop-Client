@@ -53,8 +53,8 @@ const ProductDetail = ({ product }) => {
           </figure>
           <div className="m-16">
             <h2 className="card-title text-2xl mb-3">Product Name: {details.name}</h2>
-            <p className="text-lg mb-3">{details.type}</p>
-            <p className="text-lg mb-10">Price: {details.price}</p>
+            <p className="text-lg text-gray-700 font-medium mb-3">{details.type}</p>
+            <p className="text-lg text-gray-700 font-bold mb-10">Price: {details.price}</p>
             <p className="lg:text-lg text-gray-600 font-medium mb-16">{details.short_description}</p>
             <div className="card-actions justify-center">
               <button onClick={() => handleAddToCart(details._id)} className="btn btn-primary">Add to Cart</button>
