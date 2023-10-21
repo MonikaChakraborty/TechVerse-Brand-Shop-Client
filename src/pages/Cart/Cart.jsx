@@ -14,7 +14,7 @@ const MyCart = () => {
   useEffect(() => {
     if (user?.email) {
       // Fetch user's cart items from the server
-      fetch(`http://localhost:5000/cart/${user.email}`)
+      fetch(`https://tech-brand-server.vercel.app/cart/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setCartItems(data);

@@ -20,7 +20,8 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
         //     'Your file has been deleted.',
         //     'success'
         //   )
-        fetch(`http://localhost:5000/cart/${_id}`, {
+        
+        fetch(`https://tech-brand-server.vercel.app/cart/${_id}`, {
             method: 'DELETE'
         })
           .then((res) => res.json())

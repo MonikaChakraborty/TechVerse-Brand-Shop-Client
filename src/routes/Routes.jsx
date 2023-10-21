@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/cart/:email',
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/cart/${params.email}`)
+                loader: ({params}) => fetch(`https://tech-brand-server.vercel.app/cart/${params.email}`)
             },
             {
                 path: '/brands/:brand',
