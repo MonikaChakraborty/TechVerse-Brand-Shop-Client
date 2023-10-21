@@ -21,7 +21,7 @@ const AddProducts = () => {
 
 
         // send data to server
-        fetch(' https://tech-brand-server.vercel.app/products', {
+        fetch('https://tech-brand-server.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -28,24 +28,29 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
                 
             },
+            // {
+            //     path: '/cart',
+            //     element: <Cart></Cart>
+            // },
             {
-                path: '/cart',
-                element: <Cart></Cart>
+                path: '/cart/:email',
+                element: <Cart></Cart>,
+                loader: ({params}) => fetch(`http://localhost:5000/cart/${params.email}`)
             },
             {
                 path: '/brands/:brand',
                 element: <Brands></Brands>,
-                loader: ({params}) => fetch(` https://tech-brand-server.vercel.app/brands/${params.brand}`)
+                loader: ({params}) => fetch(`https://tech-brand-server.vercel.app/brands/${params.brand}`)
             },
             {
                 path: '/products/:id',
                 element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-                loader: ({params}) => fetch(` https://tech-brand-server.vercel.app/products/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-brand-server.vercel.app/products/${params.id}`)
             },
             {
                 path: '/updateProduct/:id',
                 element: <UpdateProduct></UpdateProduct>,
-                loader: ({params}) => fetch(` https://tech-brand-server.vercel.app/update/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-brand-server.vercel.app/update/${params.id}`)
             },
             {
                 path: '/login',

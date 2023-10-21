@@ -21,7 +21,7 @@ const ProductDetail = ({ product }) => {
     };
   
 
-    fetch(' https://tech-brand-server.vercel.app/cart', {
+    fetch('https://tech-brand-server.vercel.app/cart', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
