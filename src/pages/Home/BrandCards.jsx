@@ -20,4 +20,5 @@ const BrandCards = ({ brands }) => {
   );
 };
 
+
 export default BrandCards;

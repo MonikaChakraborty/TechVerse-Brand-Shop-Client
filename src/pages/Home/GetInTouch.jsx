@@ -8,9 +8,9 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const GetInTouch = () => {
   return (
-    <div className="max-w-screen-xl mx-auto mb-24">
+    <div className="max-w-screen-xl mx-auto mb-12 lg:mb-24">
       <div className="bg-gradient-to-r from-teal-600 to-sky-200 flex lg:flex-row flex-col justify-center gap-16 p-8 rounded-xl shadow-lg">
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col lg:w-1/2">
           <h1 className="text-4xl text-center mb-8 font-bold text-teal-100">
             Get In Touch
           </h1>
@@ -47,7 +47,7 @@ const GetInTouch = () => {
           </div>
         </div>
 
-        <div className="flex flex-col bg-sky-100 p-4 w-1/2 gap-4 rounded-xl shadow-lg">
+        <div className="flex flex-col bg-sky-100 p-4 lg:w-1/2 gap-4 rounded-xl shadow-lg">
           <ContactInfo
           
             icon={<FaLocationDot />}

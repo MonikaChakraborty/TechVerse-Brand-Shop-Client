@@ -28,4 +28,5 @@ const BrandProducts = ({ product }) => {
   );
 };
 
+
 export default BrandProducts;

@@ -15,7 +15,7 @@ const Brands = () => {
     <div>
       {/* <Navbar></Navbar> */}
 
-      <div className="mb-24">
+      <div className="mb-16 lg:mb-24">
         {/* slider */}
 
         <div className="carousel mb-16">
@@ -91,5 +91,6 @@ const Brands = () => {
     </div>
   );
 };
+
 
 export default Brands;

@@ -72,4 +72,5 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
   );
 };
 
+
 export default CartItems;
