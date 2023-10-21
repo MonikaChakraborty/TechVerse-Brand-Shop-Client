@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../shared/Navbar";
 import LoginMedia from "../Login/LoginMedia";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
