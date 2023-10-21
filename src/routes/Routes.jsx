@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/updateProduct/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
                 loader: ({params}) => fetch(`https://tech-brand-server.vercel.app/update/${params.id}`)
             },
             {
