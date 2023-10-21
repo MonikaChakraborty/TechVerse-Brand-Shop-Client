@@ -13,7 +13,7 @@ const Brands = () => {
   //   }
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
 
       <div className="mb-24">
         {/* slider */}

@@ -44,7 +44,7 @@ const ProductDetail = ({ product }) => {
   // const { _id , image, name, brand_name, type, price, rating } = product;
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
 
       <div className="max-w-screen-xl mx-auto mt-24 ">
         <div className="card lg:card-side shadow-xl bg-gradient-to-r from-sky-100 to-blue-300">

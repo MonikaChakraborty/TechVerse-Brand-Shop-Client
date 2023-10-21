@@ -1,16 +1,18 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../shared/Navbar";
+// import Navbar from "../shared/Navbar";
 import Banner from "./Banner";
 import BrandCards from "./BrandCards";
 import GetInTouch from "./GetInTouch";
 import AboutUs from "./AboutUs";
 import Footer from "./Footer";
 
+
 const Home = () => {
   const brands = useLoaderData();
+  
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Banner></Banner>
 
       <div className="max-w-screen-xl mx-auto mb-24">
@@ -28,4 +30,7 @@ const Home = () => {
   );
 };
 
+
+
 export default Home;
+

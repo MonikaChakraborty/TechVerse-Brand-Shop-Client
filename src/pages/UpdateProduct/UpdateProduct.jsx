@@ -50,7 +50,7 @@ const UpdateProduct = () => {
 }
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
 
       <div className="bg-teal-100 p-16">
         <h2 className="text-4xl font-bold text-center mb-8 text-teal-800">
