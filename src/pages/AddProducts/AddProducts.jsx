@@ -1,4 +1,3 @@
-import Navbar from "../shared/Navbar";
 
 const AddProducts = () => {
 
@@ -47,7 +46,7 @@ const AddProducts = () => {
           <div className="md:flex mb-5">
             <div className="form-control md: w-1/2">
               <label className="label">
-                <span className="label-text text-lg">Image</span>
+                <span className="label-text text-lg text-gray-800 font-medium">Image</span>
               </label>
               <label className="input-group">
                 {/* <span>Name</span> */}
@@ -62,7 +61,7 @@ const AddProducts = () => {
 
             <div className="form-control md:w-1/2 ml-8">
               <label className="label">
-                <span className="label-text text-lg">Name</span>
+                <span className="label-text text-lg text-gray-800 font-medium">Name</span>
               </label>
               <label className="input-group">
                
@@ -80,7 +79,7 @@ const AddProducts = () => {
             <div className="md:flex mb-5">
             <div className="form-control md: w-1/2">
               <label className="label">
-                <span className="label-text text-lg">Brand Name</span>
+                <span className="label-text text-lg text-gray-800 font-medium">Brand Name</span>
               </label>
               <label className="input-group">
                 
@@ -95,7 +94,7 @@ const AddProducts = () => {
 
             <div className="form-control md:w-1/2 ml-8">
               <label className="label">
-                <span className="label-text text-lg">Type</span>
+                <span className="label-text text-lg text-gray-800 font-medium">Type</span>
               </label>
               <label className="input-group">
                
@@ -114,7 +113,7 @@ const AddProducts = () => {
             <div className="md:flex mb-5">
             <div className="form-control md: w-1/2">
               <label className="label">
-                <span className="label-text text-lg">Price</span>
+                <span className="label-text text-lg text-gray-800 font-medium">Price</span>
               </label>
               <label className="input-group">
                 
@@ -129,7 +128,7 @@ const AddProducts = () => {
 
             <div className="form-control md:w-1/2 ml-8">
               <label className="label">
-                <span className="label-text text-lg">Rating</span>
+                <span className="label-text text-lg text-gray-800 font-medium">Rating</span>
               </label>
               <label className="input-group">
                
@@ -149,7 +148,7 @@ const AddProducts = () => {
             <div className="mb-8">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text text-lg">Short Description</span>
+                <span className="label-text text-lg text-gray-800 font-medium">Short Description</span>
               </label>
               <label className="input-group">
                 

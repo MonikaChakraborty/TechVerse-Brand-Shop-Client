@@ -4,7 +4,6 @@ import Banner from "./Banner";
 import BrandCards from "./BrandCards";
 import GetInTouch from "./GetInTouch";
 import AboutUs from "./AboutUs";
-import Footer from "./Footer";
 
 
 const Home = () => {
@@ -25,7 +24,6 @@ const Home = () => {
       </div>
       <AboutUs></AboutUs>
       <GetInTouch></GetInTouch>
-      <Footer></Footer>
     </div>
   );
 };

@@ -45,7 +45,7 @@ const ProductDetail = ({ product }) => {
     <div>
       {/* <Navbar></Navbar> */}
 
-      <div className="max-w-screen-xl mx-auto mt-16 lg:mt-24 ">
+      <div className="max-w-screen-xl mx-auto mt-16 mb-24 lg:mt-24 ">
         <div className="card lg:card-side shadow-xl bg-gradient-to-r from-sky-100 to-blue-300">
           <figure className=" ">
             <img className="lg:w-[800px] w-[500px] lg:mr-5 lg:ml-5 h-[500px]  object-cover" src={details.image} alt="" />

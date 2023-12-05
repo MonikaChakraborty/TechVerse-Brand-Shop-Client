@@ -79,7 +79,6 @@ const AuthProvider = ({children}) => {
 
     const authentications = {
         googleLogin,
-        // user
         createUser,
         signIn,
         logOut,

@@ -3,13 +3,24 @@ import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 const LoginMedia = () => {
 
     const { user, googleLogin, githubLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log('location on login media', location);
+
 
     const handleLoginMedia = (media) => {
         media()
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+
+            // navigate after login
+            navigate(location?.state ? location.state : '/');
+
+        })
         .catch(error => console.log(error))
 
     }

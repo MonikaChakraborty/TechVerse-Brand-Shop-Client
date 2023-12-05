@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import Navbar from "../shared/Navbar";
 import { useNavigate } from "react-router-dom";
 import CartItems from "../CartItems/CartItems";
 // import Swal from "sweetalert2";
@@ -36,19 +35,39 @@ const MyCart = () => {
   }, [user, navigate]);
 
   return (
-    <div className="bg-gradient-to-r from-teal-600 to-sky-200 ">
-      {/* Render the cart items in the component */}
-      {/* <Navbar></Navbar> */}
-      <h1 className="text-4xl font-medium text-teal-900 text-center pt-4 mb-10">My Cart Items</h1>
+    <div className="flex flex-col min-h-screen">
+    {/* Navbar */}
+    {/* <Navbar /> */}
+
+    {/* Main content */}
+    <div
+      className="bg-gradient-to-r from-teal-600 to-sky-200 flex-1"
+      style={{
+        minHeight: "calc(100vh - 308px))", // Subtract the height of navbar and footer
+      }}
+    >
+      <h1 className="text-4xl font-medium text-teal-900 text-center pt-4 mb-10">
+        My Cart
+      </h1>
       <div className="grid grid-cols-1">
-      {cartItems.map((item) => (
-        // Render each item in the cart
-        <CartItems key={item._id} item={item} cartItems={cartItems} setCartItems={setCartItems}></CartItems>
-      ))}
+        {cartItems.map((item) => (
+          // Render each item in the cart
+          <CartItems
+            key={item._id}
+            item={item}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+          ></CartItems>
+        ))}
       </div>
     </div>
-  );
+
+    {/* Footer */}
+    {/* <Footer /> */}
+  </div>
+);
 };
+
 
 export default MyCart;
 

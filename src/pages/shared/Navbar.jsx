@@ -8,6 +8,7 @@ const Navbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
   
+  
   const handleToggle = (e) => {
     if(e.target.checked){
       setTheme("dark");
@@ -16,7 +17,6 @@ const Navbar = () => {
     }
     
   }
-
 
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Navbar = () => {
               ? "pending"
               : isActive
               ? "text-gray-200 bg-teal-600 text-lg font-medium"
-              : "text-xl text-teal-800 font-medium"
+              : "text-xl text-teal-800 font-medium hover:mr-2"
           }
         >
           Home
@@ -49,7 +49,7 @@ const Navbar = () => {
               ? "pending"
               : isActive
               ? "text-gray-200 bg-teal-600 text-lg font-medium"
-              : "text-xl text-teal-800 font-medium"
+              : "text-xl text-teal-800 font-medium hover:ml-2 "
           }
         >
           Add Products
@@ -65,7 +65,7 @@ const Navbar = () => {
               ? "pending"
               : isActive
               ? "text-gray-200 bg-teal-600 text-lg font-medium"
-              : "text-xl text-teal-800 font-medium"
+              : "text-xl text-teal-800 font-medium hover:ml-2"
           }
         >
           My Cart
@@ -75,7 +75,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-blue-200">
+    <div className="  navbar bg-blue-200" id="scroll-top">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

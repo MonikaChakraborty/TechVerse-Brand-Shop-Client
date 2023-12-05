@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../shared/Navbar";
 import BrandProducts from "../BrandProducts/BrandProducts";
+// import { Carousel } from "keep-react";
+"use client";
 import image1 from "../../assets/image1.jpg";
 // import image2 from "../../assets/image2.jpg";
 import image2 from "../../assets/imag2-2.jpg";
@@ -11,9 +12,9 @@ const Brands = () => {
   //   if(loadedProducts.length === 0){
   //     <h2>No products</h2>
   //   }
+  
   return (
     <div>
-      {/* <Navbar></Navbar> */}
 
       <div className="mb-16 lg:mb-24">
         {/* slider */}
@@ -52,40 +53,54 @@ const Brands = () => {
               </a>
             </div>
           </div>
-          {/* <div id="slide4" className="carousel-item relative w-full">
-            <img
-              src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
-              className="w-full"
-            />
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide3" className="btn btn-circle">
-                ❮
-              </a>
-              <a href="#slide1" className="btn btn-circle">
-                ❯
-              </a>
-            </div>
-          </div> */}
         </div>
 
 
-        <div className="max-w-screen-xl mx-auto">
-        <h2 className="text-4xl text-center font-medium text-teal-800 mb-8">Products</h2>
-        {/* <h3>products: {loadedProducts.length}</h3> */}
+        {/* <div className=" w-full h-[80vh]">
+          <Carousel slideInterval={5000} showControls={true} indicators={true}>
+            <img
+              src={image1}
+              alt="slider-1"
+              height={400}
+              width={910}
+            />
+            <img
+              src={image2}
+              alt="slider-2"
+              height={400}
+              width={910}
+            />
+            <img
+              src={image3}
+              alt="slider-3"
+              height={400}
+              width={910}
+            />
+           
+          </Carousel>
+        </div> */}
 
-        
-        {loadedProducts.length === 0 ? (
-          <h1 className="text-4xl font-medium">No Products Available</h1>
-        ) : (
-          <div className="grid lg:grid-cols-2 gap-16">
-            {loadedProducts.map((product) => (
-              <BrandProducts
-                key={product._id}
-                product={product}
-              ></BrandProducts>
-            ))}
-          </div>
-        )}
+
+
+
+        <div className="max-w-screen-xl mx-auto">
+          <h2 className="text-4xl text-center font-medium text-teal-800 mb-8">
+            Products
+          </h2>
+          {/* <h3>products: {loadedProducts.length}</h3> */}
+
+          {loadedProducts.length === 0 ? (
+            <div className="flex justify-center"><h1 className="text-4xl font-medium">Sorry! No Products Available of This Brand</h1></div>
+          ) : (
+            <div className="grid lg:grid-cols-2 gap-16">
+              {loadedProducts.map((product) => (
+                <BrandProducts
+                  key={product._id}
+                  product={product}
+                ></BrandProducts>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

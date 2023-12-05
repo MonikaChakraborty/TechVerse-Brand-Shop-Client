@@ -15,11 +15,7 @@ const CartItems = ({ item, cartItems, setCartItems }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        //   Swal.fire(
-        //     'Deleted!',
-        //     'Your file has been deleted.',
-        //     'success'
-        //   )
+
 
         fetch(`https://tech-brand-server.vercel.app/cart/${_id}`, {
             method: 'DELETE'

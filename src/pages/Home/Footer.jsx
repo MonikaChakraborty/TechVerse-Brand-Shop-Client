@@ -1,13 +1,20 @@
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
+
+
 const Footer = () => {
+  const handleScrollTop = () => {
+    window.scrollTo(0,0);
+  }
   return (
-    <footer className="footer footer-center p-10 bg-sky-100 text-base-content rounded">
+    <div className="bottom-0 footer footer-center p-10 bg-sky-100 text-base-content rounded">
       <nav className="grid grid-flow-col gap-4 text-base text-gray-800 font-medium">
         <a className="link link-hover">About TechVerse</a>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Jobs</a>
         <a className="link link-hover">Press kit</a>
       </nav>
-      <nav>
+      <nav className="">
+        
         <div className="grid grid-flow-col gap-4 ">
           <a className="text-sky-400">
             <svg
@@ -44,13 +51,22 @@ const Footer = () => {
           </a>
         </div>
       </nav>
+      
       <aside className="text-sm font-medium">
         <p>Copyright © 2023 - All rights reserved by <span className="text-teal-800 font-bold text-base">
             Tech<span className="text-slate-500">Verse</span>
           </span></p>
+
+          <button onClick={handleScrollTop} className="absolute right-20 rounded border-8 border-slate-500
+          bg-slate-500 text-sky-300" id="scroll-top">
+          <BsFillArrowUpSquareFill size={30}></BsFillArrowUpSquareFill>
+        </button>
       </aside>
-    </footer>
+      
+    </div>
   );
 };
+
+
 
 export default Footer;
