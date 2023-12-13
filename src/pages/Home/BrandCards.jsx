@@ -6,7 +6,7 @@ const BrandCards = ({ brands }) => {
     <Link to={`/brands/${brand_name}`}>
     <div className="card bg-gradient-to-r from-sky-200 to-teal-600 shadow-xl ">
       <figure>
-        <img className="w-full lg:h-[50vh] object-cover"
+        <img className="w-full h-[50vh]  object-cover"
           src={image}
           alt=""
         />

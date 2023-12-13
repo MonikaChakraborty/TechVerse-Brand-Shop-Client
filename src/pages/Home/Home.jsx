@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import BrandCards from "./BrandCards";
 import GetInTouch from "./GetInTouch";
 import AboutUs from "./AboutUs";
+import WorkGallery from "./WorkGallery";
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
         </div>
       </div>
       <AboutUs></AboutUs>
+      <WorkGallery></WorkGallery>
       <GetInTouch></GetInTouch>
     </div>
   );

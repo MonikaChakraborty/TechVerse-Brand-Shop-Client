@@ -1,0 +1,48 @@
+/* .gallery-card:hover{
+    height: 200px;
+    background: black;
+} */
+
+.card{
+    /* height: 400px; */
+    overflow: hidden;
+}
+img{
+    transition: .5s;
+}
+
+.intro{
+    height: 70px;
+    /* width: full; */
+    padding: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    background: rgb(27, 27, 27, .5);
+    bottom: -10px;
+    transition: .5s;
+}
+
+.intro p{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .intro{
+    height: 150px;
+    /* bottom: 20px; */
+    background: linear-gradient(to right, #87CEEB, #008080);
+
+}
+
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover img{
+    transform: scale(1.1) rotate(-3deg);
+}

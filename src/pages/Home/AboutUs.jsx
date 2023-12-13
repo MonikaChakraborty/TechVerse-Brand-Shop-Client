@@ -7,9 +7,27 @@ import { BsPeopleFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import { FcGlobe } from "react-icons/fc";
 import { BsFillPlayCircleFill } from "react-icons/bs";
-
+import { useState } from "react";
+import YouTube from "react-youtube";
+import './About.css'
 
 const AboutUs = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const videoOptions = {
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  const handlePlayClick = () => {
+    setShowVideo(true);
+  };
+
+  const handleCloseVideo = () => {
+    setShowVideo(false);
+  };
+
   return (
     <div className="max-w-screen-xl mx-auto mb-12 lg:mb-24">
       <div className="flex lg:flex-row flex-col justify-center bg-gradient-to-r from-sky-100 to-teal-400 rounded-xl p-16 lg:p-8">
@@ -45,7 +63,10 @@ const AboutUs = () => {
               <FcGlobe size={30} className="mr-2"></FcGlobe>Global Reach
             </h3>
           </div>
-          <button className="btn mt-6 lg:mt-12 text-white bg-teal-600 normal-case text-base hover:bg-teal-800">Meet with Us</button>
+          <button
+            className="btn mt-6 lg:mt-12 text-white bg-teal-600 normal-case text-base hover:bg-teal-800"
+            
+          >Meet With US</button>
         </div>
         <div className="lg:w-[40%] mt-6 lg:mt-12 lg:-ml-12 relative">
           <img
@@ -59,8 +80,21 @@ const AboutUs = () => {
             src={about1}
             alt=""
           />
-           <div className="absolute lg:bottom-[215px] bottom-12 left-40 bg-teal-200 rounded-full border border-teal-200 lg:left-52 text-teal-800 cursor-pointer">
-            <BsFillPlayCircleFill size={40}></BsFillPlayCircleFill></div>
+           <div className="absolute lg:bottom-[215px] bottom-12 left-40 bg-teal-200 rounded-full border border-teal-200 lg:left-52 text-teal-800 cursor-pointer play-icon">
+            <BsFillPlayCircleFill onClick={handlePlayClick} size={40}></BsFillPlayCircleFill>
+          </div>
+          {showVideo && (
+            <div className="video-overlay" onClick={handleCloseVideo}>
+              <div className="video-container">
+                <YouTube
+                  videoId="_epHuHdct3k"
+                  opts={videoOptions}
+                  className="youtube-video"
+                />
+              </div>
+            </div>
+          )}
+            
         </div>
       </div>
     </div>

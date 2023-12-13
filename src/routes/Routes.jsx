@@ -21,8 +21,13 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('/brands.json')
+                loader: () => fetch('/brands.json'),
             },
+            // {
+            //     path: '/workGallery',
+            //     element: <WorkGallery></WorkGallery>,
+            //     loader: () => fetch('/gallery.json')
+            // },
             {
                 path: '/addProducts',
                 element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
